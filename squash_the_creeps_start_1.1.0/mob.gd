@@ -3,8 +3,10 @@ extends CharacterBody3D
 #Min/max speed of mob in m/s
 @export var min_speed = 10
 @export var max_speed = 18
-
-func _physics_process(_delta):
+@export var fall_acceleration = 75
+func _physics_process(delta):
+	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
+		velocity.y = velocity.y - (fall_acceleration * delta)
 	move_and_slide()
 
 func initialize(start_pos, player_pos):
@@ -20,6 +22,7 @@ func initialize(start_pos, player_pos):
 	velocity = Vector3.FORWARD * random_speed
 	#Get a forward velocity for a speed
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
+
 
 func _on_visible_on_screen_notifier_3d_screen_exited():
 	queue_free()

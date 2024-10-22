@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var storedJumpVel = DEFAULT_JUMP_VELOCITY
 @onready var storedGravity = DEFAULT_GRAVITY
 @onready var storedSens = DEFAULT_SENSITIVITY
+@onready var rotation_speed = 2.0
 
 #func _ready():
 	# Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -20,6 +21,19 @@ extends CharacterBody3D
 		#
 		#$Pivot.rotate_x(deg_to_rad(event.relative.y * DEFAULT_SENSITIVITY * .5))
 		#$Pivot.rotation.z = clamp($Pivot.rotation.z, deg_to_rad(-45), deg_to_rad(45))
+func _process(delta: float) -> void:
+	update_camera_rotation(delta)
+
+func update_camera_rotation(delta):
+	var input_vector = Vector2()
+	if Input.is_action_pressed("left"):
+		input_vector.x = +1
+	elif Input.is_action_pressed("right"):
+		input_vector.x = -1
+		
+	$CameraPivot.rotate_y(input_vector.x * rotation_speed * delta)
+	
+	
 
 func _physics_process(delta):
 	# _climbing(8)
@@ -37,6 +51,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
 	if direction and DEFAULT_GRAVITY != 0:
 		if is_on_floor():
 			velocity.x = direction.x * DEFAULT_SPEED
@@ -51,9 +66,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, startingXVel/2, DEFAULT_SPEED*.5)
 		velocity.z = move_toward(velocity.z, startingZVel/2, DEFAULT_SPEED*.5)
 		
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
-		$Pivot.basis = Basis.looking_at(direction)
+	$Pivot.basis = Basis.looking_at(direction)
 
 	move_and_slide()
 
