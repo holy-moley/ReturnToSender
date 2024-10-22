@@ -8,6 +8,8 @@ size = Vector3(1.99167, 1.28528, 2.28101)
 
 [node name="Mob" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29686, 0)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_80pv2")
 
 [node name="Pivot" type="Node3D" parent="."]
