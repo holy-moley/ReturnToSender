@@ -22,6 +22,8 @@ func _physics_process(delta):
 	if player_y <= -150:
 		global_transform.origin = start_pos
 		target_velocity.y = 0
+	
+	speed = 0 #Sets speed to 0, should be changed to make it not clunky
 		
 	direction = -transform.basis.z #Set direction to wherever player is looking
 	if Input.is_action_pressed("left"):  

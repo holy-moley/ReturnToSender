@@ -1,8 +1,4 @@
 res://main.tscn
 res://player.tscn
 res://mob.tscn
-res://player_character.gd
-res://player.gd
 res://playertest.gd
-res://playertemplate.gd
-res://mob.gd
