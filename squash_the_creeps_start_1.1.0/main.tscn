@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dibmxxgs24c6y"]
+[gd_scene load_steps=19 format=3 uid="uid://dibmxxgs24c6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_cb3ao"]
 [ext_resource type="PackedScene" uid="uid://dwggalpxc4xky" path="res://player.tscn" id="1_nhwxy"]
 [ext_resource type="PackedScene" uid="uid://cx6ebcswvuhgi" path="res://mob.tscn" id="2_fkq84"]
+[ext_resource type="Script" path="res://playertest.gd" id="4_67sti"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fnte1"]
 size = Vector3(60, 2, 60)
@@ -48,6 +49,9 @@ material = SubResource("StandardMaterial3D_je7wv")
 
 [sub_resource type="PrismMesh" id="PrismMesh_2ytyb"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eiu6c"]
+points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b252v"]
 
 [node name="Main" type="Node"]
@@ -72,6 +76,7 @@ transform = Transform3D(0.605194, 0.353041, 0.713514, -0.796052, 0.275622, 0.538
 
 [node name="Player" parent="." instance=ExtResource("1_nhwxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+script = ExtResource("4_67sti")
 
 [node name="CameraPivot" type="Marker3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
@@ -171,6 +176,10 @@ collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Ramp"]
 mesh = SubResource("PrismMesh_2ytyb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Obstacles/Ramp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_eiu6c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Ramp"]
 shape = SubResource("ConvexPolygonShape3D_b252v")

@@ -13,27 +13,15 @@ extends CharacterBody3D
 @export var forward_velocity = Vector3.ZERO
 @export var player_y = 0.0
 @export var start_pos = Vector3(0, 1, 0)
-@export var jumping = false
-
-func wait(seconds: float) -> void:
-	await get_tree().create_timer(seconds).timeout
 
 func _process(delta):
 	player_y = global_transform.origin.y #Get Ypos of player
 
-func respawn(location):
-	global_transform.origin = location
-	target_velocity.y = 0
-
 func _physics_process(delta):
-	print(jumping)
-	print(velocity.y)
 	#Respawn if player falls off the map
 	if player_y <= -150:
-		respawn(start_pos)
-	
-	if Input.is_action_pressed("respawn"):
-		respawn(start_pos)
+		global_transform.origin = start_pos
+		target_velocity.y = 0
 	
 	 #Sets speed to 0, should be changed to make it not clunky
 		
@@ -59,19 +47,13 @@ func _physics_process(delta):
 		# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		target_velocity.y = jump_velocity
+	print("Speed", speed)
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
 	# Vertical Velocity
-	
-	if velocity.y >0: #If the velocity is positive, the player is jumping
-		jumping = true
-	if not is_on_floor() and jumping == true: # If jumping, fall at a normal rate
+	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
-	elif not is_on_floor() and jumping == false: #If not jumping, fall slower to make it less jarring
-		target_velocity.y = target_velocity.y - (fall_acceleration/2 * delta)
-	if is_on_floor(): #When on the ground, player is not jumping
-		jumping = false
 	# Moving the Character
 	velocity = target_velocity
 	#print("Velocity ", velocity)
