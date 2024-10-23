@@ -15,7 +15,7 @@ func initialize(start_pos, player_pos):
 	look_at_from_position(start_pos, player_pos, Vector3.UP)
 	
 	#Randomly rotate the mob around 45 degrees so it doesn't
-	#move the player directly
+	#move toward the player directly
 	rotate_y(randf_range(-PI/4, PI/4))
 	#Get a random speed
 	var random_speed = randi_range(min_speed, max_speed)
