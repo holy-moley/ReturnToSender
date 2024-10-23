@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dibmxxgs24c6y"]
+[gd_scene load_steps=17 format=3 uid="uid://dibmxxgs24c6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_cb3ao"]
 [ext_resource type="PackedScene" uid="uid://dwggalpxc4xky" path="res://player.tscn" id="1_nhwxy"]
 [ext_resource type="PackedScene" uid="uid://cx6ebcswvuhgi" path="res://mob.tscn" id="2_fkq84"]
-[ext_resource type="Script" path="res://playertest.gd" id="4_67sti"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fnte1"]
 size = Vector3(60, 2, 60)
@@ -73,7 +72,6 @@ transform = Transform3D(0.605194, 0.353041, 0.713514, -0.796052, 0.275622, 0.538
 
 [node name="Player" parent="." instance=ExtResource("1_nhwxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-script = ExtResource("4_67sti")
 
 [node name="CameraPivot" type="Marker3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
