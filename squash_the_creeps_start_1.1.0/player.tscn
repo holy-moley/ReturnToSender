@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwggalpxc4xky"]
+
+[ext_resource type="PackedScene" uid="uid://kfonyr118o2l" path="res://box.glb" id="1_wgwjy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_juhrh"]
+size = Vector3(1.97, 1.89, 2.965)
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 6
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="box" parent="Pivot" instance=ExtResource("1_wgwjy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295, -0.13, 0)
+shape = SubResource("BoxShape3D_juhrh")

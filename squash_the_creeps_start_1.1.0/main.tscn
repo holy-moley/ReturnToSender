@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dibmxxgs24c6y"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_cb3ao"]
+[ext_resource type="PackedScene" uid="uid://dwggalpxc4xky" path="res://player.tscn" id="1_nhwxy"]
+[ext_resource type="PackedScene" uid="uid://cx6ebcswvuhgi" path="res://mob.tscn" id="2_fkq84"]
+[ext_resource type="Script" path="res://playertest.gd" id="4_67sti"]
+[ext_resource type="PackedScene" uid="uid://bgsbbbmqws3ff" path="res://floor_wood_large_dark_2.tscn" id="5_a1n7r"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_cb3ao")
+mob_scene = ExtResource("2_fkq84")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.605194, 0.353041, 0.713514, -0.796052, 0.275622, 0.538826, -0.0064325, -0.894089, 0.447844, 34.3158, 36.2625, -11.1765)
+
+[node name="Player" parent="." instance=ExtResource("1_nhwxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 15, -16)
+script = ExtResource("4_67sti")
+
+[node name="CameraPivot" type="Marker3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.87462, -0.484809, 0, 0.484809, 0.87462, 0, -2, 6.902)
+size = 19.0
+
+[node name="floor_wood_large_dark2" parent="." instance=ExtResource("5_a1n7r")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
