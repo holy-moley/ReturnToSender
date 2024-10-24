@@ -111,7 +111,6 @@ transform = Transform3D(0.00096734, 0, -1, 0, 1, 0, 1, 0, 0.00096734, -18.9983, 
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.426
-autostart = true
 
 [node name="Walls" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -32, 28, -6)
@@ -178,10 +177,23 @@ collision_mask = 0
 mesh = SubResource("PrismMesh_2ytyb")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Obstacles/Ramp"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_eiu6c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Ramp"]
+shape = SubResource("ConvexPolygonShape3D_b252v")
+
+[node name="Ramp2" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(-13.5, -2.98023e-07, 0, 1.43051e-06, -3, 0, 0, 0, 14.82, 7.5, 4.5, 24.62)
+collision_layer = 4
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Ramp2"]
+mesh = SubResource("PrismMesh_2ytyb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Obstacles/Ramp2"]
+shape = SubResource("ConvexPolygonShape3D_eiu6c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Ramp2"]
 shape = SubResource("ConvexPolygonShape3D_b252v")
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
