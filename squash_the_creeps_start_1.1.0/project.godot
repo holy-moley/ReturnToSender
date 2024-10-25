@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 
 project/assembly_name="Squash the Creeps (3D)"
 
+[editor]
+
+run/main_run_args="fra"
+
 [input]
 
 left={

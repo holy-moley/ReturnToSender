@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwggalpxc4xky"]
+[gd_scene load_steps=4 format=3 uid="uid://dwggalpxc4xky"]
 
+[ext_resource type="Script" path="res://playertest.gd" id="1_s5vny"]
 [ext_resource type="PackedScene" uid="uid://kfonyr118o2l" path="res://box.glb" id="1_wgwjy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_juhrh"]
@@ -8,6 +9,7 @@ size = Vector3(1.97, 1.89, 2.965)
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274019, 1.48228, 0.0889188)
 collision_mask = 6
+script = ExtResource("1_s5vny")
 
 [node name="Pivot" type="Node3D" parent="."]
 
