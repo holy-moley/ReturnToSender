@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce6cd37tklqed"]
+
+[ext_resource type="PackedScene" uid="uid://n61juuxhceo0" path="res://art/Assets/wall.gltf" id="1_uf0vc"]
+[ext_resource type="PackedScene" uid="uid://csicdgt30dq1w" path="res://art/Assets/torch_mounted.gltf" id="3_2uh4r"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98077, 0, -0.0152197)
+
+[node name="torch_mounted2" parent="." instance=ExtResource("3_2uh4r")]
+transform = Transform3D(-2.5, 0, -3.77489e-07, 0, 2.5, 0, 3.77489e-07, 0, -2.5, -1.99317, 7.57901, -0.792844)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_mounted2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375907, 0.316494)
+light_color = Color(0.932803, 0.482969, 0, 1)
+light_energy = 3.0
+light_size = 0.25
+shadow_enabled = true
+
+[node name="wall2" parent="." instance=ExtResource("1_uf0vc")]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -2, 0, -0.0926929)
