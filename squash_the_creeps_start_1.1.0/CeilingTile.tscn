@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc16gg04ru68w"]
+
+[ext_resource type="PackedScene" uid="uid://5xan1n3mjrea" path="res://art/Assets/floor_tile_large.gltf" id="1_rkr7y"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="floor_tile_large2" parent="." instance=ExtResource("1_rkr7y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="floor_tile_large3" parent="." instance=ExtResource("1_rkr7y")]
+transform = Transform3D(3, 0, 0, 0, -3, 2.62268e-07, 0, -2.62268e-07, -3, 0, 0, 0)

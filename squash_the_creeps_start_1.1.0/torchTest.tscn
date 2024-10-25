@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv03uv4xdkfqc"]
+
+[ext_resource type="PackedScene" uid="uid://c6cso06ip3g1k" path="res://art/Assets/torch_lit.gltf" id="1_mikgc"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(2.51, 0, 0, 0, 2.51, 0, 0, 0, 2.51, 0, 0, 0)
+
+[node name="torch_lit2" parent="." instance=ExtResource("1_mikgc")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.538654, 0)
+light_color = Color(0.932803, 0.482969, 0, 1)
+shadow_enabled = true

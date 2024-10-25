@@ -16,7 +16,7 @@ func initialize(start_pos, player_pos):
 	
 	#Randomly rotate the mob around 45 degrees so it doesn't
 	#move toward the player directly
-	rotate_y(randf_range(-PI/4, PI/4))
+	#rotate_y(randf_range(-PI/4, PI/4))
 	#Get a random speed
 	var random_speed = randi_range(min_speed, max_speed)
 	velocity = Vector3.FORWARD * random_speed
