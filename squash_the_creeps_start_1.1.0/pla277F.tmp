@@ -44,6 +44,21 @@ floor_snap_length = 0.14
 platform_on_leave = 1
 platform_floor_layers = 4294967291
 script = ExtResource("1_s5vny")
+speed = null
+rotation_speed = null
+fall_acceleration = null
+target_velocity = null
+direction = null
+jump_velocity = null
+max_speed = null
+max_walk_speed = null
+max_run_speed = null
+forward_velocity = null
+player_y = null
+player_y_previous = null
+start_pos = null
+jumping = null
+velocity_previous = null
 
 [node name="Pivot" type="Node3D" parent="."]
 

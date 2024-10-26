@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv03uv4xdkfqc"]
 
-[ext_resource type="PackedScene" uid="uid://c6cso06ip3g1k" path="res://art/Assets/torch_lit.gltf" id="1_mikgc"]
+[ext_resource type="PackedScene" uid="uid://ejox7uwlsjwo" path="res://art/Assets/torch_lit.gltf" id="1_mikgc"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(2.51, 0, 0, 0, 2.51, 0, 0, 0, 2.51, 0, 0, 0)

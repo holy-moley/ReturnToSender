@@ -3,8 +3,9 @@ extends Node
 
 @export var mob_scene: PackedScene
 
-func _process(delta: float) -> void:
-	print("FPS: ", Engine.get_frames_per_second())
+#func _process(delta: float) -> void:
+	#print("FPS: ", Engine.get_frames_per_second())
+
 
 func _on_mob_timer_timeout():
 	#Create new instance of the Mob scene

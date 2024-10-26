@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://2283cvk3na36"]
+[gd_scene load_steps=12 format=3 uid="uid://2283cvk3na36"]
 
 [ext_resource type="PackedScene" uid="uid://cjb3itvuie5yl" path="res://art/Assets/stairs_wall_left.gltf" id="1_4b616"]
 [ext_resource type="PackedScene" uid="uid://bjlr7drjmtnh7" path="res://art/Assets/wall.gltf" id="2_tq8dh"]
 [ext_resource type="PackedScene" uid="uid://blte4tx2r12vp" path="res://art/Assets/wall_corner.gltf" id="3_n2b5i"]
 [ext_resource type="PackedScene" uid="uid://chmauoma3qsrp" path="res://art/Assets/floor_foundation_front.gltf" id="4_ltamn"]
 [ext_resource type="PackedScene" uid="uid://d37e08wql1kqd" path="res://art/Assets/shelf_large.gltf" id="5_j2cgw"]
-[ext_resource type="PackedScene" uid="uid://ce6cd37tklqed" path="res://wallTest.tscn" id="7_88ppj"]
+[ext_resource type="PackedScene" uid="uid://ce6cd37tklqed" path="res://rooms/wallTest.tscn" id="7_88ppj"]
 [ext_resource type="PackedScene" uid="uid://beje4ejpmo67b" path="res://art/Assets/wall_window_open.gltf" id="8_7g4oa"]
 [ext_resource type="PackedScene" uid="uid://cea2qcafmg65q" path="res://art/Assets/ceiling_tile.gltf" id="8_yigps"]
-[ext_resource type="PackedScene" uid="uid://dq08ddnbsanp" path="res://art/Assets/stool.gltf" id="9_5ov7b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5qet"]
 vertex_color_use_as_albedo = true
@@ -129,6 +128,3 @@ transform = Transform3D(0.998844, 0.0480828, 0, -0.0480828, 0.998844, 0, 0, 0, 2
 
 [node name="shelf_large5" parent="Shelves" instance=ExtResource("5_j2cgw")]
 transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1.32, -15.9143, 5.03495, -2.88617)
-
-[node name="stool2" parent="." instance=ExtResource("9_5ov7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 0)
