@@ -34,7 +34,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:box_large": {
-"generate/physics": true
+"physics/layer": 5
 }
 }
 }

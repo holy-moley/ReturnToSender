@@ -2,5 +2,9 @@ res://main.tscn
 res://player.tscn
 res://dungeonMessHall.tscn
 res://plate_food_a_2.tscn
-res://playertest.gd
 res://goalpost.tscn
+res://ShelfHall.tscn
+res://playertest.gd
+res://main.gd
+res://poison_fog.tscn
+res://wallTest.tscn
