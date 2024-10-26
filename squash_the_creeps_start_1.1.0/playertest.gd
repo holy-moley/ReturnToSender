@@ -8,8 +8,8 @@ extends CharacterBody3D
 @export var fall_acceleration = 75
 @export var target_velocity = Vector3.ZERO
 @export var direction = Vector3.ZERO
-@export var jump_velocity = 30.0
-@export var max_speed = 15
+@export var jump_velocity = 20
+@export var max_speed = 20
 @export var forward_velocity = Vector3.ZERO
 @export var player_y = 0.0
 @export var player_y_previous = 0.0
@@ -44,13 +44,13 @@ func _physics_process(delta):
 			speed -= 3
 	else:
 		if speed < 0:
-			speed += 1
+			speed += 3
 	if Input.is_action_pressed("forward"): #Move forward w/ acceleration/decceleration
 		if speed < max_speed:
 			speed += 3
 	else:
 		if speed >0:
-			speed -= 1
+			speed -= 3
 		
 
 	

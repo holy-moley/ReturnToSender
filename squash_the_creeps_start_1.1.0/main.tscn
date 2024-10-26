@@ -1,12 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://dibmxxgs24c6y"]
+[gd_scene load_steps=20 format=3 uid="uid://dibmxxgs24c6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_cb3ao"]
 [ext_resource type="PackedScene" uid="uid://dwggalpxc4xky" path="res://player.tscn" id="1_nhwxy"]
 [ext_resource type="PackedScene" uid="uid://cx6ebcswvuhgi" path="res://mob.tscn" id="2_fkq84"]
-[ext_resource type="PackedScene" uid="uid://66ka7ok2lkqa" path="res://art/Assets/rubble_half.gltf" id="6_3ed1y"]
+[ext_resource type="PackedScene" uid="uid://2283cvk3na36" path="res://rooms/ShelfHall.tscn" id="6_m2lbd"]
 [ext_resource type="PackedScene" uid="uid://bocgqul2ptwv2" path="res://goalpost.tscn" id="7_rukn8"]
-[ext_resource type="PackedScene" uid="uid://0ro3ghwra1c7" path="res://dungeonMessHall.tscn" id="8_67ypg"]
-[ext_resource type="PackedScene" uid="uid://qcqp2lkwborq" path="res://art/Assets/floor_tile_large.gltf" id="9_53l63"]
+[ext_resource type="PackedScene" uid="uid://0ro3ghwra1c7" path="res://rooms/dungeonMessHall.tscn" id="8_67ypg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fnte1"]
 size = Vector3(60, 2, 60)
@@ -68,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_unppy")
 
 [node name="Player" parent="." instance=ExtResource("1_nhwxy")]
-transform = Transform3D(-0.0012835, 0.0113297, 0.999935, -0.000239745, 0.999936, -0.01133, -0.999999, -0.000254229, -0.00128071, 57.4577, 3.05838, -30.5939)
+transform = Transform3D(-0.000962658, 0.00849727, 0.749951, -0.000179809, 0.749952, -0.00849751, -0.749999, -0.000190704, -0.000960559, 202.439, 4.14375, -31.6244)
 
 [node name="CameraPivot" type="Marker3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
@@ -177,18 +176,15 @@ shape = SubResource("ConvexPolygonShape3D_eiu6c")
 shape = SubResource("ConvexPolygonShape3D_b252v")
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -76)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 0, -76)
 
 [node name="Mess Hall" parent="Node3D" instance=ExtResource("8_67ypg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.384, 0, 55.0978)
-
-[node name="floor_tile_large2" parent="Node3D" instance=ExtResource("9_53l63")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 23.0258, -0.187515, 34.65)
-
-[node name="rubble_half2" parent="Node3D" instance=ExtResource("6_3ed1y")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.974199, -0.187515, 43.65)
 
 [node name="Goalpost" parent="." instance=ExtResource("7_rukn8")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 210.867, -62.5874)
+
+[node name="Node3D2" parent="." instance=ExtResource("6_m2lbd")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 157.777, 0.652382, -23.7638)
