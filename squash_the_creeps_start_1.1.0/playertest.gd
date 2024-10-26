@@ -64,10 +64,11 @@ func openDeathMenu():
 	else:
 		print ("Death menu null, check node path.")
 
-
+@onready var pl = get_tree().get_root().get_node("Main/Player")
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if area.is_in_group("traps"):
 		$Sfx/AudioStreamPlayer/Boxdead.play()
+		pl.visible=false
 		emit_signal("playerDeath")
 
 
