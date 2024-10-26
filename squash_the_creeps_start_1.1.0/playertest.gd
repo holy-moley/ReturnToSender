@@ -21,14 +21,57 @@ extends CharacterBody3D
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
-	
+
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("sprint"):
 		max_speed = max_run_speed
 	else:
 		max_speed = max_walk_speed
-	
-	
+
+func pauseButtonPress():
+	get_tree().paused = true
+	show()
+
+@onready var death_menu = get_tree().get_root().get_node("Main/Menus/DeathMenu")
+signal playerDeath
+func _ready():
+	#Ensures accessible death menu.
+	if death_menu:
+		print("Death menu loaded.")
+	else:
+		print("Death menu not loaded.")
+	var traps = get_tree().get_nodes_in_group("traps")
+	for trap in traps:
+		if trap is Area3D:
+			trap.body_entered.connect(onBodyEntered)
+		else:
+			print("Found node that isn't area3d.")
+	self.playerDeath.connect(onDeath)
+
+func onBodyEntered(body):
+	if body.is_in_group("traps"):
+		$Sfx/AudioStreamPlayer/Boxdead.play()
+		emit_signal("playerDeath")
+
+
+func onDeath():
+	openDeathMenu()
+func openDeathMenu():
+	if death_menu:
+		death_menu.showMenu()
+		get_tree().paused=true
+	else:
+		print ("Death menu null, check node path.")
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	if area.is_in_group("traps"):
+		$Sfx/AudioStreamPlayer/Boxdead.play()
+		emit_signal("playerDeath")
+
+
+
 func respawn(location):
 	$Sfx/AudioStreamPlayer/Boxdead.play()
 	global_transform.origin = location
@@ -112,8 +155,3 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	apply_floor_snap()
-
-
-
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	respawn(start_pos) # Replace with function body.

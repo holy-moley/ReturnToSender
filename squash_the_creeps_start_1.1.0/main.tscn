@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dibmxxgs24c6y"]
+[gd_scene load_steps=12 format=3 uid="uid://dibmxxgs24c6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_cb3ao"]
 [ext_resource type="PackedScene" uid="uid://dwggalpxc4xky" path="res://player.tscn" id="1_nhwxy"]
 [ext_resource type="PackedScene" uid="uid://cx6ebcswvuhgi" path="res://mob.tscn" id="2_fkq84"]
+[ext_resource type="PackedScene" uid="uid://cqe0dblrikacy" path="res://poison_fog.tscn" id="4_3bgk7"]
 [ext_resource type="PackedScene" uid="uid://2283cvk3na36" path="res://ShelfHall.tscn" id="6_a452a"]
+[ext_resource type="PackedScene" uid="uid://dhkgf6tlsfb4k" path="res://pause_menu.tscn" id="7_1x8lt"]
 [ext_resource type="PackedScene" uid="uid://bocgqul2ptwv2" path="res://goalpost.tscn" id="7_rukn8"]
 [ext_resource type="PackedScene" uid="uid://0ro3ghwra1c7" path="res://dungeonMessHall.tscn" id="8_67ypg"]
+[ext_resource type="PackedScene" uid="uid://h2u3i4n3ix2v" path="res://death_menu.tscn" id="8_dnycq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qgoqu"]
 
@@ -26,6 +29,15 @@ mob_scene = ExtResource("2_fkq84")
 
 [node name="Mess Hall" parent="." instance=ExtResource("8_67ypg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.384, 0, -20.9022)
+
+[node name="PoisonFog2" parent="Mess Hall" instance=ExtResource("4_3bgk7")]
+transform = Transform3D(26.532, 0, 0, 0, 6.2496, 0, 0, 0, 23, 2, 0.5, -3)
+
+[node name="ShelfHall" parent="." instance=ExtResource("6_a452a")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 32, 0, -22)
+
+[node name="PoisonFog2" parent="ShelfHall" instance=ExtResource("4_3bgk7")]
+transform = Transform3D(8.3424, 0, 0, 0, 1.6, 0, 0, 0, 2.5, -11.8, 4, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_nhwxy")]
 transform = Transform3D(-0.0012835, 0.0113297, 0.999935, -0.000239745, 0.999936, -0.01133, -0.999999, -0.000254229, -0.00128071, 76.4778, 4.84274, -31.6187)
@@ -50,10 +62,13 @@ size = 19.0
 transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 210.867, -62.5874)
 visible = false
 
-[node name="Node3D" parent="." instance=ExtResource("6_a452a")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 32, 0, -22)
-
 [node name="Settings" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Settings"]
 environment = SubResource("Environment_52xgh")
+
+[node name="Menus" type="Node" parent="."]
+
+[node name="Pause menu" parent="Menus" instance=ExtResource("7_1x8lt")]
+
+[node name="DeathMenu" parent="Menus" instance=ExtResource("8_dnycq")]

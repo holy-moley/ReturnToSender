@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqe0dblrikacy"]
+[gd_scene load_steps=6 format=3 uid="uid://cqe0dblrikacy"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gc7ld"]
+[ext_resource type="Script" path="res://poison_fog.gd" id="1_gufpv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujwg3"]
 
 [sub_resource type="Texture3DRD" id="Texture3DRD_2f8i5"]
 
-[sub_resource type="FogMaterial" id="FogMaterial_ob41x"]
+[sub_resource type="FogMaterial" id="FogMaterial_r513m"]
 density = 0.426
 albedo = Color(0.721569, 0, 1, 1)
 emission = Color(0.480587, 0.00143083, 0.672487, 1)
@@ -12,21 +14,21 @@ height_falloff = 0.0968284
 edge_fade = 0.17411
 density_texture = SubResource("Texture3DRD_2f8i5")
 
-[sub_resource type="BoxMesh" id="BoxMesh_plrsu"]
+[sub_resource type="BoxMesh" id="BoxMesh_44vaw"]
 
-[node name="PoisonFog" type="Node3D"]
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_gufpv")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 0.14, 0, 0, 0, 2.16, 0, 0, 0)
+shape = SubResource("BoxShape3D_ujwg3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_gc7ld")
-
-[node name="FogVolume" type="FogVolume" parent="Area3D/CollisionShape3D"]
+[node name="FogVolume" type="FogVolume" parent="CollisionShape3D"]
 transform = Transform3D(0.519998, 0, 0, 0, 0.5, 0, 0, 0, 0.56, 0, 0, 0)
-material = SubResource("FogMaterial_ob41x")
+material = SubResource("FogMaterial_r513m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
-transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.2, 0, 0, 0, 0.14, 0, 0, 0, 2.376, 0, 0, 0)
 visible = false
-mesh = SubResource("BoxMesh_plrsu")
+mesh = SubResource("BoxMesh_44vaw")
+skeleton = NodePath("")
