@@ -1,6 +1,6 @@
 res://main.tscn
 res://player.tscn
-res://mob.tscn
 res://dungeonMessHall.tscn
-res://main.gd
-res://mob.gd
+res://plate_food_a_2.tscn
+res://playertest.gd
+res://goalpost.tscn

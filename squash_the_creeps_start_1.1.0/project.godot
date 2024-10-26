@@ -23,6 +23,10 @@ project/assembly_name="Squash the Creeps (3D)"
 
 run/main_run_args="fra"
 
+[global_group]
+
+Goal="Goalpost"
+
 [input]
 
 left={
@@ -68,9 +72,9 @@ respawn={
 
 [layer_names]
 
-3d_physics/layer_1="Player"
+3d_physics/layer_1="World"
 3d_physics/layer_2="Enemies"
-3d_physics/layer_3="World"
+3d_physics/layer_3="Player"
 
 [rendering]
 

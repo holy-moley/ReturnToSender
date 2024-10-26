@@ -85,3 +85,8 @@ func _physics_process(delta):
 	# Moving the Character
 	velocity = target_velocity 
 	move_and_slide()
+
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	print("GOAL ENTERED") # Replace with function body.
