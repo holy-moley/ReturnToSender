@@ -41,19 +41,18 @@ func _ready():
 		print("Death menu loaded.")
 	else:
 		print("Death menu not loaded.")
-	var traps = get_tree().get_nodes_in_group("traps")
-	for trap in traps:
-		if trap is Area3D:
-			trap.body_entered.connect(onBodyEntered)
-		else:
-			print("Found node that isn't area3d.")
+	#var traps = get_tree().get_nodes_in_group("traps")
+	#for trap in traps:
+		#if trap is Area3D:
+			#trap.body_entered.connect(onBodyEntered)
+		#else:
+			#print("Found node that isn't area3d.")
 	self.playerDeath.connect(onDeath)
 
 func onBodyEntered(body):
 	if body.is_in_group("traps"):
 		$Sfx/AudioStreamPlayer/Boxdead.play()
 		emit_signal("playerDeath")
-
 
 func onDeath():
 	openDeathMenu()

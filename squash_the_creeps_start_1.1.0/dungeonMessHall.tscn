@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://0ro3ghwra1c7"]
+[gd_scene load_steps=13 format=3 uid="uid://0ro3ghwra1c7"]
 
 [ext_resource type="PackedScene" uid="uid://ce6cd37tklqed" path="res://wallTest.tscn" id="1_3cvtl"]
 [ext_resource type="PackedScene" uid="uid://cp76dtelgetg0" path="res://art/Assets/wall_half.gltf" id="1_ftlgx"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cea2qcafmg65q" path="res://art/Assets/ceiling_tile.gltf" id="8_73c05"]
 [ext_resource type="PackedScene" uid="uid://b0xv2l2abc35a" path="res://art/Assets/table_long_tablecloth.gltf" id="10_b0hys"]
 [ext_resource type="PackedScene" uid="uid://5pe6selhqrpm" path="res://art/Assets/chair.gltf" id="11_3jrh8"]
-[ext_resource type="PackedScene" uid="uid://cqe0dblrikacy" path="res://poison_fog.tscn" id="11_cf16b"]
 [ext_resource type="PackedScene" uid="uid://dq08ddnbsanp" path="res://art/Assets/stool.gltf" id="11_ql36g"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jspp0"]
@@ -274,6 +273,3 @@ transform = Transform3D(-0.282325, 0, -2.98669, 0, 3, 0, 2.98669, 0, -0.282325, 
 
 [node name="stool2" parent="Furniture" instance=ExtResource("11_ql36g")]
 transform = Transform3D(2.71668, 0, 5.34299, 0, 3, 0, -1.27265, 0, 11.4055, -18.6506, 0.2, 0.657315)
-
-[node name="PoisonFog" parent="." instance=ExtResource("11_cf16b")]
-transform = Transform3D(26.532, 0, 0, 0, 6.2496, 0, 0, 0, 23, 2, 0.5, -3)
