@@ -40,10 +40,11 @@ theme_override_constants/v_separation = 11
 [node name="DeathLabel" type="Label" parent="GridContainer"]
 layout_mode = 2
 text = "You Died"
+horizontal_alignment = 1
 
 [node name="Respawn" type="Button" parent="GridContainer"]
 layout_mode = 2
-text = "Respawn"
+text = "Restart Game"
 
 [node name="Quit" type="Button" parent="GridContainer"]
 layout_mode = 2
