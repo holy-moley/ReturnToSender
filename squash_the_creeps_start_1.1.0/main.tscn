@@ -75,7 +75,7 @@ environment = SubResource("Environment_52xgh")
 [node name="DeathMenu" parent="Menus" instance=ExtResource("8_dnycq")]
 
 [node name="CafeteriaArea" parent="." instance=ExtResource("10_ifudf")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -84, 2, -51)
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -81, 2, -27)
 
 [node name="Area3D" parent="CafeteriaArea" instance=ExtResource("4_3bgk7")]
 transform = Transform3D(16.1172, 0, 0, 0, 3, 0, 0, 0, 13.338, 0, -11, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://2283cvk3na36"]
+[gd_scene load_steps=15 format=3 uid="uid://2283cvk3na36"]
 
 [ext_resource type="PackedScene" uid="uid://cjb3itvuie5yl" path="res://art/Assets/stairs_wall_left.gltf" id="1_4b616"]
 [ext_resource type="PackedScene" uid="uid://bjlr7drjmtnh7" path="res://art/Assets/wall.gltf" id="2_tq8dh"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://d37e08wql1kqd" path="res://art/Assets/shelf_large.gltf" id="5_j2cgw"]
 [ext_resource type="PackedScene" uid="uid://ce6cd37tklqed" path="res://wallTest.tscn" id="7_88ppj"]
 [ext_resource type="PackedScene" uid="uid://qcqp2lkwborq" path="res://art/Assets/floor_tile_large.gltf" id="7_ja7v5"]
-[ext_resource type="PackedScene" uid="uid://beje4ejpmo67b" path="res://art/Assets/wall_window_open.gltf" id="8_7g4oa"]
 [ext_resource type="PackedScene" uid="uid://cea2qcafmg65q" path="res://art/Assets/ceiling_tile.gltf" id="8_yigps"]
 [ext_resource type="PackedScene" uid="uid://dq08ddnbsanp" path="res://art/Assets/stool.gltf" id="9_5ov7b"]
 
@@ -80,9 +79,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.15
 
 [node name="stairs_wall_left2" parent="Walls+Stairs" instance=ExtResource("1_4b616")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, -0.656122, 0, -3.10805)
-
-[node name="wall_window_open2" parent="Walls+Stairs" instance=ExtResource("8_7g4oa")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21.4511, 3.96884, -0.716275)
 
 [node name="floor_tile_large2" parent="Walls+Stairs" instance=ExtResource("7_ja7v5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3.9, -1)
