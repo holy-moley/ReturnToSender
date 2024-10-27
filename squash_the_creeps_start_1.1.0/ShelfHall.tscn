@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://2283cvk3na36"]
+[gd_scene load_steps=16 format=3 uid="uid://2283cvk3na36"]
 
 [ext_resource type="PackedScene" uid="uid://cjb3itvuie5yl" path="res://art/Assets/stairs_wall_left.gltf" id="1_4b616"]
 [ext_resource type="PackedScene" uid="uid://bjlr7drjmtnh7" path="res://art/Assets/wall.gltf" id="2_tq8dh"]
 [ext_resource type="PackedScene" uid="uid://blte4tx2r12vp" path="res://art/Assets/wall_corner.gltf" id="3_n2b5i"]
 [ext_resource type="PackedScene" uid="uid://d37e08wql1kqd" path="res://art/Assets/shelf_large.gltf" id="5_j2cgw"]
+[ext_resource type="PackedScene" uid="uid://beje4ejpmo67b" path="res://art/Assets/wall_window_open.gltf" id="6_dnims"]
 [ext_resource type="PackedScene" uid="uid://ce6cd37tklqed" path="res://wallTest.tscn" id="7_88ppj"]
 [ext_resource type="PackedScene" uid="uid://qcqp2lkwborq" path="res://art/Assets/floor_tile_large.gltf" id="7_ja7v5"]
 [ext_resource type="PackedScene" uid="uid://cea2qcafmg65q" path="res://art/Assets/ceiling_tile.gltf" id="8_yigps"]
@@ -11,11 +12,11 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_5emim"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x2gbs"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_vw3uc"]
+size = Vector3(0.916504, 1, 1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6kpsv"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ip54y"]
+size = Vector3(0.920807, 1.03098, 0.864014)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_poi3f"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
@@ -104,8 +105,8 @@ mesh = SubResource("BoxMesh_5emim")
 skeleton = NodePath("../../WallTorch")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls+Stairs/StaticBody3D"]
-transform = Transform3D(27, 0, 0, 0, 7.45803, 0, 0, 0, 0.831, -10.226, 4, 1.5)
-shape = SubResource("ConvexPolygonShape3D_x2gbs")
+transform = Transform3D(27, 0, 0, 0, 7.45803, 0, 0, 0, 0.831, -9.68469, 4, 1.5)
+shape = SubResource("BoxShape3D_vw3uc")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls+Stairs/StaticBody3D"]
 transform = Transform3D(27, 0, 0, 0, 7.45803, 0, 0, 0, 0.831, -10.226, 4, -3.1)
@@ -114,8 +115,8 @@ mesh = SubResource("BoxMesh_5emim")
 skeleton = NodePath("../../WallTorch")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls+Stairs/StaticBody3D"]
-transform = Transform3D(27, 0, 0, 0, 7.45803, 0, 0, 0, 0.831, -10.226, 4, -3.1)
-shape = SubResource("ConvexPolygonShape3D_6kpsv")
+transform = Transform3D(27, 0, 0, 0, 7.45803, 0, 0, 0, 0.831, -9.71143, 4.11551, -3.1565)
+shape = SubResource("BoxShape3D_ip54y")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls+Stairs/StaticBody3D"]
 transform = Transform3D(27, 0, 0, 0, -2.60801e-07, -0.831, 0, 5.96643, -3.63242e-08, -10.226, 7.8, -1)
@@ -135,6 +136,9 @@ mesh = SubResource("BoxMesh_16t71")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls+Stairs/StaticBody3D"]
 transform = Transform3D(0.98, 0, 0, 0, 4.1, 0, 0, 0, 3.7, 2.7, 5.8, -0.8)
 shape = SubResource("ConvexPolygonShape3D_1y0i1")
+
+[node name="wall_window_open2" parent="Walls+Stairs/StaticBody3D" instance=ExtResource("6_dnims")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21.7895, 4.03144, -0.835636)
 
 [node name="Ceiling" type="Node3D" parent="."]
 

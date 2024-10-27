@@ -18,6 +18,9 @@ extends CharacterBody3D
 @export var start_pos = Vector3(76,5,-32)
 @export var jumping = false
 @export var velocity_previous = Vector3.ZERO
+@onready var raycast = $raycast
+var platform_velocity = Vector3.ZERO
+var is_on_platform = false
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
@@ -89,7 +92,6 @@ func _physics_process(delta):
 		respawn(start_pos)
 	
 	#Handle Movement
-
 	direction = -transform.basis.z #Set direction to wherever player is looking
 	if Input.is_action_pressed("left"):  
 		rotate_y(rotation_speed * delta)  # Rotate left
@@ -112,13 +114,11 @@ func _physics_process(delta):
 	else:
 		if speed >0:
 			speed -= 1
-		
-
-	
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
-	
+	if is_on_platform:
+		target_velocity.y=0
 	# Vertical Velocity
 	if velocity.y >0: #If the velocity is positive, the player is jumping
 		jumping = true
@@ -139,8 +139,11 @@ func _physics_process(delta):
 	
 	if velocity_previous.y < 0 and is_on_floor():
 		$Sfx/AudioStreamPlayer/Boxfell.play()
-		
-		
+	
+	velocity = target_velocity
+	move_and_slide()
+
+	apply_floor_snap()
 	
 	#Testing stuff, will probably scrap it	
 	#if get_floor_angle() > 0:
@@ -150,7 +153,3 @@ func _physics_process(delta):
 	#rotation_degrees.x = 30
 	#print(rotation_degrees.x)
 	# Moving the Character
-	velocity = target_velocity 
-	
-	move_and_slide()
-	apply_floor_snap()

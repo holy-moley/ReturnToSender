@@ -85,5 +85,8 @@ volume_db = -22.286
 [node name="Boxdead" type="AudioStreamPlayer" parent="Sfx/AudioStreamPlayer"]
 stream = ExtResource("4_5tyr1")
 
+[node name="raycast" type="RayCast3D" parent="."]
+target_position = Vector3(0, -3, 0)
+
 [connection signal="area_entered" from="GoalDetection" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="GoalDetection" to="." method="_on_area_3d_body_entered"]

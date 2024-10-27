@@ -41,7 +41,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 32, 0, -22)
 transform = Transform3D(8.3424, 0, 0, 0, 1.6, 0, 0, 0, 2.5, -11.8, 4, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_nhwxy")]
-transform = Transform3D(-0.0012835, 0.0113297, 0.999935, -0.000239745, 0.999936, -0.01133, -0.999999, -0.000254229, -0.00128071, 78.8765, 4.81556, -31.6218)
+transform = Transform3D(-0.0012835, 0.0113297, 0.999935, -0.000239745, 0.999936, -0.01133, -0.999999, -0.000254229, -0.00128071, 77.6117, 4.13011, -32.9685)
 
 [node name="CameraPivot" type="Marker3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
@@ -75,7 +75,7 @@ environment = SubResource("Environment_52xgh")
 [node name="DeathMenu" parent="Menus" instance=ExtResource("8_dnycq")]
 
 [node name="CafeteriaArea" parent="." instance=ExtResource("10_ifudf")]
-transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -81, 2, -27)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -83.274, 2, -50.0508)
 
 [node name="Area3D" parent="CafeteriaArea" instance=ExtResource("4_3bgk7")]
 transform = Transform3D(16.1172, 0, 0, 0, 3, 0, 0, 0, 13.338, 0, -11, 0)

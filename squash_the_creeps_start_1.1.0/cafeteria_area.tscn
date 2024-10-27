@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c37lb6aldwed3"]
+[gd_scene load_steps=28 format=3 uid="uid://c37lb6aldwed3"]
 
 [ext_resource type="PackedScene" uid="uid://bjlr7drjmtnh7" path="res://art/Assets/wall.gltf" id="1_8gngc"]
 [ext_resource type="PackedScene" uid="uid://blte4tx2r12vp" path="res://art/Assets/wall_corner.gltf" id="2_7fljt"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c078vixbqfmag" path="res://art/Assets/keyring.gltf" id="13_hcymx"]
 [ext_resource type="PackedScene" uid="uid://d1witlixkph18" path="res://art/Assets/keg.gltf" id="14_dp8rr"]
 [ext_resource type="PackedScene" uid="uid://dq08ddnbsanp" path="res://art/Assets/stool.gltf" id="15_kyxl8"]
+[ext_resource type="PackedScene" uid="uid://d37e08wql1kqd" path="res://art/Assets/shelf_large.gltf" id="15_olhos"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xj4b2"]
 
@@ -41,90 +42,163 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0t2bj"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="Animation" id="Animation_5p81a"]
-resource_name = "PlateAnim"
-length = 5.6
+[sub_resource type="Animation" id="Animation_yadva"]
+resource_name = "movingPlates"
+length = 8.0
 loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UpDown:position")
+tracks/0/path = NodePath("TablePlate:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3, 3.96667, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1.17571, 3.52174, 4.70355), Vector3(1.17571, 3.52174, 4.70355), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(1.17571, 3.52174, 4.70355)]
+"values": [Vector3(4.11822, -10.0985, -6.32165), Vector3(4.11822, -10.0985, -6.32165), Vector3(4.11822, -4.11849, -6.32165), Vector3(4.11822, -4.11849, -6.32165)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Diag:position")
+tracks/1/path = NodePath("Mid1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3, 3.96667, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(4.27997, -5.25429, -7.82658), Vector3(4.27997, -5.25429, -7.82658), Vector3(0.385307, -0.882144, -2.63628), Vector3(0.385307, -0.882144, -2.63628), Vector3(4.27997, -5.25429, -7.82658)]
+"values": [Vector3(0.890871, 0.0828891, -5.43637), Vector3(0.890871, 0.0828891, -5.43637), Vector3(0.890871, -3.6541, -5.43637), Vector3(0.890871, -3.6541, -5.43637)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Window:position")
+tracks/2/path = NodePath("Mid2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 3, 3.96667, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 4.51134, 6.64188), Vector3(0, 4.51134, 6.64188), Vector3(-1.06732, 8.42383, 12.8247), Vector3(-1.06732, 8.42383, 12.8247), Vector3(0, 4.51134, 6.64188)]
+"values": [Vector3(-0.624413, -1.75143, -1.00204), Vector3(-0.624413, -1.75143, -1.00204), Vector3(-0.624413, -4.21458, -1.00204), Vector3(-0.624413, -4.21458, -1.00204)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mid3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.643092, 0.280635, 3.93819), Vector3(-0.643092, 0.280635, 3.93819), Vector3(-0.643092, -6.10119, 3.93819), Vector3(-0.643092, -6.10119, 3.93819)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Window:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.20285, -2.83854, 8.40914), Vector3(-2.20285, -2.83854, 8.40914), Vector3(-2.20285, 1.33908, 8.40914), Vector3(-2.20285, 1.33908, 8.40914)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Window2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4, 5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.96535, -11.0191, 12.5052), Vector3(-1.96535, -11.0191, 12.5052), Vector3(-1.96535, 0.570303, 12.5052), Vector3(-1.96535, 0.570303, 12.5052), Vector3(-1.96535, 3.57171, 12.5052), Vector3(-1.96535, 3.57171, 12.5052)]
 }
 
-[sub_resource type="Animation" id="Animation_j3t03"]
+[sub_resource type="Animation" id="Animation_71gkf"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UpDown:position")
+tracks/0/path = NodePath("TablePlate:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(4.11822, -10.0985, -6.32165)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Diag:position")
+tracks/1/path = NodePath("Mid1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(4.27997, -5.25429, -7.82658)]
+"values": [Vector3(0.357107, -0.386103, -5.43637)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Window:position")
+tracks/2/path = NodePath("Mid2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 4.51134, 6.64188)]
+"values": [Vector3(-0.624413, -1.75143, -1.00204)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mid3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.643092, -6.10119, 3.93819)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Window:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.20285, -2.83854, 8.40914)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Window2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.96535, -11.0191, 12.5052)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_roaq4"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1labw"]
 _data = {
-"PlateAnim": SubResource("Animation_5p81a"),
-"RESET": SubResource("Animation_j3t03")
+"RESET": SubResource("Animation_71gkf"),
+"movingPlates": SubResource("Animation_yadva")
 }
 
 [node name="CafeteriaArea" type="Node3D"]
@@ -1046,20 +1120,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 28, -13.1519, -10.9579, 0.099814
 
 [node name="MovingPlates" type="Node3D" parent="."]
 
-[node name="Plate1" type="CharacterBody3D" parent="MovingPlates"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.56283, 0)
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="MovingPlates"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlates/Plate1"]
+[node name="TablePlate" parent="MovingPlates/AnimatableBody3D" groups=["moving_platforms"] instance=ExtResource("9_q48kn")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 4.11822, -10.0985, -6.32165)
+
+[node name="Mid1" parent="MovingPlates/AnimatableBody3D" groups=["moving_platforms"] instance=ExtResource("9_q48kn")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0.357107, -0.386103, -5.43637)
+
+[node name="Mid2" parent="MovingPlates/AnimatableBody3D" groups=["moving_platforms"] instance=ExtResource("9_q48kn")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -0.624413, -1.75143, -1.00204)
+
+[node name="Mid3" parent="MovingPlates/AnimatableBody3D" groups=["moving_platforms"] instance=ExtResource("9_q48kn")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -0.643092, -6.10119, 3.93819)
+
+[node name="Window" parent="MovingPlates/AnimatableBody3D" groups=["moving_platforms"] instance=ExtResource("9_q48kn")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -2.20285, -2.83854, 8.40914)
+
+[node name="Window2" parent="MovingPlates/AnimatableBody3D" groups=["moving_platforms"] instance=ExtResource("9_q48kn")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.96535, -11.0191, 12.5052)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlates/AnimatableBody3D"]
 libraries = {
-"": SubResource("AnimationLibrary_roaq4")
+"": SubResource("AnimationLibrary_1labw")
 }
-autoplay = "PlateAnim"
+autoplay = "movingPlates"
 
-[node name="UpDown" parent="MovingPlates/Plate1" instance=ExtResource("9_q48kn")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-
-[node name="Diag" parent="MovingPlates/Plate1" instance=ExtResource("9_q48kn")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.27997, -5.25429, -7.82658)
-
-[node name="Window" parent="MovingPlates/Plate1" instance=ExtResource("9_q48kn")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 4.51134, 6.64188)
+[node name="shelf_large2" parent="." instance=ExtResource("15_olhos")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.964606, 4.24236, 14.7996)
