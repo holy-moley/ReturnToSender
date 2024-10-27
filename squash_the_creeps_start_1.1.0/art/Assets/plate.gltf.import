@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/plate.gltf-5ddd82651ab1fed7234c99a7f880cb46.s
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -35,6 +35,7 @@ _subresources={
 "nodes": {
 "PATH:plate": {
 "generate/physics": true,
+"physics/layer": 7,
 "physics/shape_type": 1
 }
 }
