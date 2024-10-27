@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dwggalpxc4xky" path="res://player.tscn" id="1_nhwxy"]
 [ext_resource type="PackedScene" uid="uid://cx6ebcswvuhgi" path="res://mob.tscn" id="2_fkq84"]
 [ext_resource type="PackedScene" uid="uid://cqe0dblrikacy" path="res://poison_fog.tscn" id="4_3bgk7"]
-[ext_resource type="PackedScene" uid="uid://c37lb6aldwed3" path="res://cafeteria_area.tscn" id="6_4hrld"]
 [ext_resource type="PackedScene" uid="uid://2283cvk3na36" path="res://ShelfHall.tscn" id="6_a452a"]
 [ext_resource type="PackedScene" uid="uid://dhkgf6tlsfb4k" path="res://pause_menu.tscn" id="7_1x8lt"]
 [ext_resource type="PackedScene" uid="uid://bocgqul2ptwv2" path="res://goalpost.tscn" id="7_rukn8"]
 [ext_resource type="PackedScene" uid="uid://0ro3ghwra1c7" path="res://dungeonMessHall.tscn" id="8_67ypg"]
 [ext_resource type="PackedScene" uid="uid://h2u3i4n3ix2v" path="res://death_menu.tscn" id="8_dnycq"]
+[ext_resource type="PackedScene" uid="uid://c37lb6aldwed3" path="res://cafeteria_area.tscn" id="10_ifudf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qgoqu"]
 
@@ -39,12 +39,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 32, 0, -22)
 
 [node name="PoisonFog2" parent="ShelfHall" instance=ExtResource("4_3bgk7")]
 transform = Transform3D(8.3424, 0, 0, 0, 1.6, 0, 0, 0, 2.5, -11.8, 4, 0)
-
-[node name="CafeteriaArea" parent="." instance=ExtResource("6_4hrld")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -84.1507, 1.43049, -49.7542)
-
-[node name="PoisonFog2" parent="CafeteriaArea" instance=ExtResource("4_3bgk7")]
-transform = Transform3D(12.887, 0, 0, 0, 1.6, 0, 0, 0, 13.585, 0.646354, -10.7916, 0.0236835)
 
 [node name="Player" parent="." instance=ExtResource("1_nhwxy")]
 transform = Transform3D(-0.0012835, 0.0113297, 0.999935, -0.000239745, 0.999936, -0.01133, -0.999999, -0.000254229, -0.00128071, 78.8765, 4.81556, -31.6218)
@@ -79,3 +73,9 @@ environment = SubResource("Environment_52xgh")
 [node name="Pause menu" parent="Menus" instance=ExtResource("7_1x8lt")]
 
 [node name="DeathMenu" parent="Menus" instance=ExtResource("8_dnycq")]
+
+[node name="CafeteriaArea" parent="." instance=ExtResource("10_ifudf")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -84, 2, -51)
+
+[node name="Area3D" parent="CafeteriaArea" instance=ExtResource("4_3bgk7")]
+transform = Transform3D(16.1172, 0, 0, 0, 3, 0, 0, 0, 13.338, 0, -11, 0)

@@ -3,8 +3,8 @@ extends Node
 
 @export var mob_scene: PackedScene
 
-#func _process(delta: float) -> void:
-	#print("FPS: ", Engine.get_frames_per_second())
+func _process(delta: float) -> void:
+	print("FPS: ", Engine.get_frames_per_second())
 
 
 func _on_mob_timer_timeout():
@@ -22,5 +22,5 @@ func _on_mob_timer_timeout():
 	var player_position = $Player.position
 	mob.initialize(mob_spawn_location, player_position)
 	
-	#Span mob, add it to Main scene
+	#Spawn mob, add it to Main scene
 	add_child(mob)

@@ -34,8 +34,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:plate_food_A": {
-"generate/physics": true,
-"physics/body_type": 1
+"physics/shape_type": 0
 }
 }
 }

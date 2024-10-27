@@ -34,7 +34,6 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:floor_tile_large": {
-"generate/physics": true,
 "physics/shape_type": 1
 }
 }

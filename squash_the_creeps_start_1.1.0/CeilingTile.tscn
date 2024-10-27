@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc16gg04ru68w"]
+[gd_scene load_steps=2 format=3 uid="uid://cd30ygqquh3h7"]
 
-[ext_resource type="PackedScene" uid="uid://5xan1n3mjrea" path="res://art/Assets/floor_tile_large.gltf" id="1_rkr7y"]
+[ext_resource type="PackedScene" uid="uid://qcqp2lkwborq" path="res://art/Assets/floor_tile_large.gltf" id="1_rkr7y"]
 
 [node name="Node3D" type="Node3D"]
 

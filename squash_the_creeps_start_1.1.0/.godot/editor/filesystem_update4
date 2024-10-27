@@ -1,8 +1,10 @@
+res://main.tscn
 res://player.tscn
 res://dungeonMessHall.tscn
-res://plate_food_a_2.tscn
-res://goalpost.tscn
-res://ShelfHall.tscn
-res://poison_fog.tscn
 res://wallTest.tscn
-res://main.tscn
+res://ShelfHall.tscn
+res://cafeteria_area.tscn
+res://ShelfCandle.tscn
+res://poison_fog.tscn
+res://death_menu.tscn
+res://pause_menu.tscn

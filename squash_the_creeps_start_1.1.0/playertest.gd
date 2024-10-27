@@ -79,7 +79,6 @@ func respawn(location):
 
 func _physics_process(delta):
 	velocity_previous = velocity
-	print(velocity_previous)
 	player_y_previous = player_y
 	player_y = global_transform.origin.y #Get Ypos of player
 	#Handle Respawning

@@ -34,7 +34,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:wall_corner": {
-"generate/physics": true
+"physics/shape_type": 0
 }
 }
 }

@@ -34,7 +34,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:ceiling_tile": {
-"generate/physics": true
+"physics/shape_type": 1
 }
 }
 }

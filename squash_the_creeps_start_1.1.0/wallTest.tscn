@@ -12,9 +12,14 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.993
 [node name="OmniLight3D" type="OmniLight3D" parent="torch_mounted2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.425622, 0.316494)
 light_color = Color(0.932803, 0.482969, 0, 1)
-light_energy = 5.0
+light_energy = 3.222
 light_size = 0.25
-shadow_enabled = true
+light_specular = 0.0
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 56.89
+distance_fade_shadow = 0.0
+distance_fade_length = 8.9
 omni_range = 60.0
 
 [node name="wall2" parent="." instance=ExtResource("2_l8x5g")]

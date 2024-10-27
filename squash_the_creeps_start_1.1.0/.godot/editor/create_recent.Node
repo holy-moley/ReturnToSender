@@ -1,15 +1,14 @@
+MeshInstance3D
+StaticBody3D
 AudioStreamPlayer
 Node
-MeshInstance3D
 WorldEnvironment
 FogVolume
 CollisionShape3D
 Area3D
 SpringArm3D
-StaticBody3D
 DirectionalLight3D
 SpotLight3D
 OmniLight3D
 Node3D
 RayCast3D
-Timer
