@@ -1,5 +1,6 @@
-res://player.tscn
+res://tunnel.tscn
 res://main.tscn
+res://player.tscn
 res://dungeonMessHall.tscn
 res://wallTest.tscn
 res://ShelfHall.tscn
@@ -8,3 +9,4 @@ res://ShelfCandle.tscn
 res://poison_fog.tscn
 res://death_menu.tscn
 res://pause_menu.tscn
+res://Prison.tscn
